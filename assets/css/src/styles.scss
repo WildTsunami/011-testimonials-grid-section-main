@@ -1,0 +1,133 @@
+// Fonts
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-weight: 500;
+    src: url("../fonts/BarlowSemiCondensed-Medium500.ttf") format("TrueType");
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-weight: 600;
+    src: url("../fonts/BarlowSemiCondensed-SemiBold600.ttf") format("TrueType");
+}
+
+// Base code
+*, *::after, *::before{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    min-height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+}
+
+// Regular code
+main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+
+    gap: 25px;
+    
+    max-width: 1250px;
+    margin: 50px 15px;
+}
+
+.review{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    min-width: 300px;
+    padding: 25px;
+
+    color: white;
+    font: 500 1.3rem "Barlow Semi Condensed";
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 10px 15px -10px #000000, 0px 0px 10px 3px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 15px -10px #000000, 0px 0px 10px 3px rgba(0,0,0,0);   
+}
+.review--violet{
+    background: url("../images/bg-pattern-quotation.svg") top right no-repeat hsl(263, 55%, 52%);
+}
+.review--grayishBlue{
+    background-color: hsl(217, 19%, 35%);
+}
+.review--white{
+    color: hsl(217, 19%, 35%);
+    background-color: white;
+}
+.review--darkBlue{
+   background-color: hsl(219, 29%, 14%);
+}
+
+.userProfile{
+    display: flex;
+}
+
+.userProfile__image{
+    width: 30px;
+    border-radius: 90px;
+}
+.userProfile__image--violet{
+    width: 34px;
+    border: 2px solid hsl(262, 52%, 64%);
+}
+.userProfile__image--darkViolet{
+    width: 34px;
+    border: 2px solid hsl(263, 55%, 52%);    
+}
+
+
+.userProfile__content{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 15px;
+}
+
+.userProfile__name{
+    font-weight: 600;
+    opacity: 70%;
+}
+
+.userProfile__graduate{
+    font-size: 1.2rem;
+    opacity: 50%;
+}
+
+.review__highlightedText{
+    font: 600 2rem "Barlow Semi Condensed";
+    line-height: 2.6rem;
+}
+.review__highlightedText--gray{
+    color: hsl(219, 29%, 14%);
+}
+
+.review_text{
+    font: 500 1.3rem "Barlow Semi Condensed";
+    line-height: 1.8rem;
+    opacity: 50%;
+}
+
+@media screen and (min-width: 1250px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .review--violet{
+        grid-column: span 2;
+        background-position: top right 15%;
+    }
+    .review--darkBlue{
+        grid-column: span 2;
+    }
+    .review--white-large{
+        grid-area: 1 / 4 / 3 / 5;
+    }
+}
+
